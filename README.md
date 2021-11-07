@@ -10,6 +10,13 @@ Results
   * The minimum	temperature for June was only 64 degrees, while December can in at 56 degrees. Which having a temp that low would stop most from either wanting to surf, or eat       ice cream in the month of December.
   * With the temperatures in June ranging from 64-85 degrees, I could see people being open to surfing and eating ice cream for the entirety of the month.
 
+December Summary
+
+![image](https://user-images.githubusercontent.com/88358771/140629013-40fc26cf-f9fa-48c2-9516-a39a12a984d7.png)
+
+June Summary
+
+![image](https://user-images.githubusercontent.com/88358771/140629024-06cab4b6-ecac-4902-8c6f-1fb64347544e.png)
 
 
 
@@ -20,15 +27,24 @@ The client was worried about the weather temperatures, and precipitation for the
 Queries to gather more data
 
 June Precipitation
+
 june_temp_prec = session.query(Measurement.tobs,Measurement.prcp).filter(extract('month', Measurement.date) == 6).all()
+
 june_temp_prec_df = pd.DataFrame(june_temp_prec)
-# print(june_temp_prec_df)
+
+print(june_temp_prec_df)
+
 june_temp_prec_df.describe()
 
 
 
+
 December Precipitation
+
 dec_temp_prec = session.query(Measurement.tobs,Measurement.prcp).filter(extract('month', Measurement.date) == 12).all()
+
 dec_temp_prec_df = pd.DataFrame(dec_temp_prec)
-# print(dec_temp_prec_df)
+
+print(dec_temp_prec_df)
+
 dec_temp_prec_df.describe()
